@@ -30,23 +30,10 @@ Place imagenet validation images in the imagenet_val folder or coco2017 images f
 
 Quantization can be performed with the following command. 
 
-MobileNetV2 (1 inputs model)
+Yolo-v8 from Ultralytics
 
 ```
-python3 quantize.py --input_model ./models/mobilenetv2_1.0.opt.onnx --output_model ./models/mobilenet_quantized.onnx --calibrate_dataset imagenet_val --per_channel True
-```
-
-YOLOv3 Tiny (4 inputs model)
-
-```
-python3 quantize.py --input_model ./models/yolov3-tiny.opt.onnx --output_model ./models/yolov3-tiny_quantized_per_tensor.onnx --calibrate_dataset imagenet_val
-```
-
-YOLOX Tiny (1 inputs model)
-
-```
-python3 quantize.py --input_model ./models/yolox_tiny.opt.onnx --output_model ./models/yolox_tiny_quantized_per_tensor.onnx --calibrate_dataset imagenet_val
-python3 quantize.py --input_model ./models/yolox_tiny.opt.onnx --output_model ./models/yolox_tiny_quantized_per_channel.onnx --calibrate_dataset imagenet_val --per_channel Trues
+python quantize.py --input_model ./models/240321_v8obb_N1024_6cls_e31.onnx --output_model ./onnx-quantization/v8obb.onnx --calibrate_dataset ./datasets/obb_test/dataset/images/train
 ```
 
 ## Test
